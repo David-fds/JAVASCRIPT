@@ -1,7 +1,11 @@
 function getGrade(gradeEntry){
-        var gradeLetter
+        var gradeLetter;
 
-    if (gradeEntry >= 97){
+    if (gradeEntry > 100 || gradeEntry < 0){
+        gradeLetter = "Must enter a number between 0 and 100";
+    }
+
+    else if (gradeEntry >= 97){
         gradeLetter = "A+";        
     }
 
@@ -48,11 +52,15 @@ function getGrade(gradeEntry){
         gradeLetter = "D-";
     }
 
-    else {
+    else if (gradeEntry >= 0){
         gradeLetter = "F";
+    }
+
+    else{
+        gradeLetter = "That is a non-numeric value;  please enter a number";
     }
 
     return gradeLetter
 }
 
-console.log(getGrade(91));
+console.log(getGrade(75));
